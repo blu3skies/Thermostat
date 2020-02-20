@@ -10,9 +10,45 @@
   color: red;
 }
 
+html { font-size: 30px}
+
 body {
-  background: #5f2c82;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-align:center;
+  margin:  150px;
+  background: lightgray
   
 }
+
+header {
+  font-size: 6em;
+}
+
+button {
+  font-size: 1em;
+  margin: 10px;
+  font-family: Geneva;
+
+}
+
+section {
+  background: grey;
+  border-radius: 10%;
+  border-left: 900px;
+  max-width: 500px;
+}
+
+#up {
+  font-size: 1.5em;
+  border-radius: 20%;
+  padding:0px 8px;
+}
+
+#down {
+  font-size: 1.5em;
+  border-radius: 20%;
+  padding:0px 8px;
+}
+
+#powerSaverMode {
+border-radius: 50%;
+padding:10px 27px; }

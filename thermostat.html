@@ -8,13 +8,18 @@
   <title>Thermostat</title>
 </head>
 <body>
-  <p style="text-align:center">
-    <h1 id="temperature"></h1>
-    <button id='up'>+</button>
+  <section>
+    <header id="temperature"></header>
     <button id='down'>-</button>
+    <button id='up'>+</button>
+    <br>
+    <button id='reset'>Reset</button>
+    <br>
     <button id='powerSaverMode'>PowerSaverMode</button>
-    <button id='reset'>reset</button>
-  </p>
+    <br>
+    <h6>Current Outside Temperature: <span id="current-temperature"></span></h6>
+    <br>
+  </section>
 </body>
 
 <script src="src/Thermostat.js"></script>
@@ -22,11 +27,13 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 $(document).ready(function() { 
+
   var thermostat = new Thermostat();
   updateTemperature();
+  displayWeather();
 
   function updateTemperature() {
-  $('#temperature').text(thermostat.temperature);
+  $('#temperature').text(thermostat.temperature + "°c");
   $('#temperature').attr('class', thermostat.usage_indicator())
 }
 
@@ -41,15 +48,26 @@ $(document).ready(function() {
 
   $('#powerSaverMode').click(function(){
     thermostat.switchPowerSavingMode()
+    if (thermostat.powerSaverMode === true) {
+      $('#powerSaverMode').css('color', 'blue')
+    } else { $('#powerSaverMode').css('color', 'black')}
     updateTemperature()  });
     
-
 
   $('#reset').click(function(){
     thermostat.reset()
     updateTemperature()  });
 
-});
+  function displayWeather() {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+    var city = 'London,uk'
+    var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
+    var units = '&units=metric';
+    $.get(url + city + token + units, function(data) {
+      $('#current-temperature').text(data.main.temp);
+    });
+    }
+  });
 </script> 
 
 </html>
