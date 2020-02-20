@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='./public/css/styles.css'/>
+  <title>Thermostat</title>
+</head>
+<body>
+  <p style="text-align:center">
+    <h1 id="temperature"></h1>
+    <button id='up'>+</button>
+    <button id='down'>-</button>
+    <button id='powerSaverMode'>PowerSaverMode</button>
+    <button id='reset'>reset</button>
+  </p>
+</body>
+
+<script src="src/Thermostat.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(document).ready(function() { 
+  var thermostat = new Thermostat();
+  updateTemperature();
+
+  function updateTemperature() {
+  $('#temperature').text(thermostat.temperature);
+  $('#temperature').attr('class', thermostat.usage_indicator())
+}
+
+  
+  $('#up').click(function(){
+    thermostat.up()
+    updateTemperature()  })
+
+  $('#down').click(function(){
+    thermostat.down()
+    updateTemperature()  });
+
+  $('#powerSaverMode').click(function(){
+    thermostat.switchPowerSavingMode()
+    updateTemperature()  });
+    
+
+
+  $('#reset').click(function(){
+    thermostat.reset()
+    updateTemperature()  });
+
+});
+</script> 
+
+</html>

@@ -10,7 +10,9 @@ Thermostat.prototype.up = function() {
 }
 
 Thermostat.prototype.down = function() {
+  if (this.temperature > this.MIN_TEMP) {
   this.temperature--;
+} else {}
 }
 
 Thermostat.prototype.switchPowerSavingMode = function() {
