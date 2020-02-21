@@ -1,21 +1,32 @@
 .low-usage {
-  color: green;
+  background: #1FA2FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #A6FFCB, #12D8FA, #1FA2FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
 }
 
-.medium-usage {
-  color: black;
+.mid-usage {
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .high-usage {
-  color: red;
+  background: #c31432;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 html { font-size: 30px}
 
 body {
+
+background: #C6FFDD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   text-align:center;
   margin:  150px;
-  background: lightgray
   
 }
 
@@ -31,10 +42,9 @@ button {
 }
 
 section {
-  background: grey;
   border-radius: 10%;
-  border-left: 900px;
-  max-width: 500px;
+  border-left: 10px;
+  max-width: 800px;
 }
 
 #up {
@@ -50,5 +60,10 @@ section {
 }
 
 #powerSaverMode {
-border-radius: 50%;
-padding:10px 27px; }
+  border-radius: 50%;
+  padding:10px 27px; 
+}
+
+#temperature {
+  border-radius: 30%;
+}
